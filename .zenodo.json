@@ -30,7 +30,7 @@
   "notes": "Independent Research Publication No. 8. v1.8.0 Public Research Edition. PUBLICATION_LAUNCH lock. Sole SSOT: REALITY_ACCORD_v1.8.0_PUBLIC_RESEARCH_EDITION.md. Not peer reviewed. Not independently replicated. Not production. Generative AI tools assisted preparation. The named author is responsible for the released content and publication decision.",
   "related_identifiers": [
     {
-      "identifier": "https://github.com/AGIM8003/reality-accord",
+      "identifier": "https://github.com/AGIM8003/reality-accord-concordance",
       "relation": "isSupplementedBy",
       "resource_type": "software",
       "scheme": "url"

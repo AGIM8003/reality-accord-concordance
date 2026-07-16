@@ -8,10 +8,12 @@ authors:
     orcid: "https://orcid.org/0009-0002-3234-7765"
     affiliation: "Independent Researcher"
     email: "agim@vertogroup.ai"
+doi: "10.5281/zenodo.21401830"
 version: "1.8.0"
 date-released: "2026-07-16"
 license: "CC-BY-NC-ND-4.0"
-url: "https://github.com/AGIM8003/reality-accord"
+url: "https://github.com/AGIM8003/reality-accord-concordance"
+repository-code: "https://github.com/AGIM8003/reality-accord-concordance"
 abstract: >-
   Multi-robot systems must coordinate effects in shared space without exchanging full private world models, while preserving human intervention optionality. We propose REALITY ACCORD: privacy-minimized counterexample exchange, consequence tubes, and Human Optionality Reserve gates that ACCEPT, REJECT, or QUARANTINE proposed effects. This Public Research Edition (v1.8.0) packages an importable research library (from reality_accord import RealityAccordEngine), Reality Gate and benchmark PASS evidence, mutation testing, alternative implementation replication, a dual-drone corridor conflict with pedestrian and UTM supervisor roles, stress tests scaling agents, parameters, and exchanges, ISO 26262, ISO 21448 SOTIF, and ISO 13482 adjacency mapping with honest PARTIAL, PLANNED, and NOT APPLICABLE levels, deployment manifests, competitive positioning against ROS 2 and certified automotive stacks, and an honest gap register. REALITY ACCORD is not an ISO 26262 or DO-178C certified stack; world models in the proof-of-concept remain kinematic. This independent technical blueprint does not claim peer review, independent human replication, safety certification, patentability, or legal compliance opinion. It is released for evaluation, citation, and attempted falsification. Evidence artifacts in this package include Reality Gate results, benchmarks, mutation scores, real-world scenario JSON, stress-scale timings, deployment manifests, and an importable stdlib-only research library with quickstart and integration tests. Readers should treat all claims as blueprint-grade until independently replicated.
 keywords:

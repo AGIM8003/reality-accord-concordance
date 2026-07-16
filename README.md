@@ -41,7 +41,7 @@ See `poc/REPRODUCE.md` for the complete evidence harness.
 
 Use `CITATION.cff`. After Zenodo assignment:
 
-> Haxhijaha, A. (2026). REALITY ACCORD: Counterexample-Bounded Effect Concordance for Heterogeneous Autonomous Systems (v1.8.0). Zenodo. https://doi.org/10.5281/zenodo.XXXXXXXX
+> Haxhijaha, A. (2026). REALITY ACCORD: Counterexample-Bounded Effect Concordance for Heterogeneous Autonomous Systems (v1.8.0). Zenodo. https://doi.org/10.5281/zenodo.21401830
 
 ## Contact / commercial licensing
 
