@@ -1,0 +1,57 @@
+{
+  "framework": "REALITY_ACCORD",
+  "author": "Agim Haxhijaha",
+  "orcid": "0009-0002-3234-7765",
+  "disclaimer": "PoC replication evidence only \u2014 not production",
+  "timestamp_utc": "2026-07-16T17:56:25.271127+00:00",
+  "primary_style": "direct_counterexample_concordance",
+  "alternative_style": "statistical_hypothesis_testing",
+  "pass_case": {
+    "verdict": "ACCEPT",
+    "counterexamples": [],
+    "consequence_tube": {
+      "x": [
+        1.804,
+        2.196
+      ],
+      "acceptable": true
+    },
+    "hor_pct": 100.0
+  },
+  "fail_case": {
+    "verdict": "QUARANTINE",
+    "counterexamples": [
+      {
+        "agent": "pedestrian-sensor",
+        "p_compat": 1.0,
+        "class": "human_proximity",
+        "severity": "CRITICAL"
+      },
+      {
+        "agent": "vehicle-radar",
+        "p_compat": 0.0,
+        "class": "obstacle_collision",
+        "severity": "CRITICAL"
+      }
+    ],
+    "consequence_tube": {
+      "x": [
+        1.804,
+        2.196
+      ],
+      "acceptable": false
+    },
+    "hor_pct": 33.33
+  },
+  "reference": {
+    "pass": {
+      "verdict": "ACCEPT",
+      "hor_pct": 100.0
+    },
+    "fail": {
+      "verdict": "QUARANTINE",
+      "hor_pct": 33.33
+    }
+  },
+  "replication_pass": true
+}

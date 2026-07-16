@@ -1,0 +1,201 @@
+{
+  "gate": "REALITY-ACCORD-REALITY-GATE-1",
+  "spec_version": "PUBLICATION_HARDENING_PROTOCOL",
+  "blueprint_version": "1.5.0",
+  "python_version": "3.14.4",
+  "timestamp": "2026-07-16T17:56:48.998377+00:00",
+  "run_count": 3,
+  "author": "Agim Haxhijaha",
+  "orcid": "0009-0002-3234-7765",
+  "disclaimer": "Proof-of-concept only. Not production. Not peer reviewed.",
+  "seed": 17,
+  "total_gate_execution_seconds": 0.000624,
+  "GATE_VERDICT": "PASS",
+  "tests": [
+    {
+      "name": "1_scale_5_agents_3d_models",
+      "passed": true,
+      "duration_ms": 0.13,
+      "details": {
+        "agents": 5,
+        "dimensions": "position+velocity+intent",
+        "verdict": "ACCEPT",
+        "tube_order_1": {
+          "position_bounds": {
+            "x": [
+              1.85,
+              2.15
+            ],
+            "y": [
+              1.85,
+              2.15
+            ],
+            "z": [
+              0.35,
+              0.65
+            ]
+          },
+          "velocity_bounds": {
+            "x": [
+              0.0,
+              0.5
+            ],
+            "y": [
+              0.0,
+              0.3
+            ],
+            "z": [
+              0.0,
+              0.1
+            ]
+          },
+          "acceptable": true,
+          "basis_counterexamples": [],
+          "order": 1
+        }
+      }
+    },
+    {
+      "name": "2_near_miss_concordance_quarantine",
+      "passed": true,
+      "duration_ms": 0.09,
+      "details": {
+        "agreeing_agents": 5,
+        "dissenter": "edge-dissenter",
+        "verdict": "QUARANTINE",
+        "quarantined": [
+          "edge-dissenter"
+        ],
+        "response_classes": [
+          "SAFE",
+          "UNSAFE_OBSTACLE"
+        ]
+      }
+    },
+    {
+      "name": "3_privacy_no_full_model_reconstruction",
+      "passed": true,
+      "duration_ms": 0.07,
+      "details": {
+        "counterexamples": 2,
+        "reconstruction_entropy_bits": 1.58,
+        "privacy_threshold_bits": 4.0,
+        "reveals_full_model": false
+      }
+    },
+    {
+      "name": "4_cascading_second_order_tube",
+      "passed": true,
+      "duration_ms": 0.03,
+      "details": {
+        "primary_margin_x": 0.3,
+        "secondary_margin_x": 0.6,
+        "order_2_basis": []
+      }
+    },
+    {
+      "name": "5_hor_stress_refuse_below_minimum",
+      "passed": true,
+      "duration_ms": 0.04,
+      "details": {
+        "hor_minimum_pct": 25.0,
+        "refused_at_pct": 0.0,
+        "sweep_points": 11,
+        "sweep_tail": [
+          {
+            "hor_pct": 100.0,
+            "scale": 0.2,
+            "verdict": "ACCEPT"
+          },
+          {
+            "hor_pct": 100.0,
+            "scale": 0.1,
+            "verdict": "ACCEPT"
+          },
+          {
+            "hor_pct": 0.0,
+            "scale": 0.01,
+            "verdict": "REJECT"
+          }
+        ]
+      }
+    },
+    {
+      "name": "6_temporal_validity_re_concordance",
+      "passed": true,
+      "duration_ms": 0.06,
+      "details": {
+        "ttl_seconds": 300,
+        "valid_before_expiry": true,
+        "invalid_after_expiry": true,
+        "re_concordance_issued": "2026-07-16T17:56:48.998166+00:00"
+      }
+    }
+  ],
+  "defenses": [
+    {
+      "attack": "model_spoofing",
+      "blocked": true,
+      "mechanism": "model_digest_attestation",
+      "details": {
+        "genuine_digest": "b92904760ca97651",
+        "spoofed_digest": "8176e36241d239a5"
+      }
+    },
+    {
+      "attack": "counterexample_withholding",
+      "blocked": true,
+      "mechanism": "mandatory_counterexample_coverage_check",
+      "details": {
+        "full_verdict": "QUARANTINE",
+        "withheld_verdict": "QUARANTINE",
+        "full_cx_count": 1,
+        "withheld_cx_count": 0
+      }
+    },
+    {
+      "attack": "tube_inflation",
+      "blocked": true,
+      "mechanism": "bounded_margin_envelope",
+      "details": {
+        "legitimate_span": 0.9,
+        "inflated_span": 30.9
+      }
+    },
+    {
+      "attack": "hor_manipulation",
+      "blocked": true,
+      "mechanism": "independent_hor_recomputation",
+      "details": {
+        "claimed_hor": 99.9,
+        "recomputed_hor": 100.0
+      }
+    },
+    {
+      "attack": "accord_replay",
+      "blocked": true,
+      "mechanism": "time_bound_interlock_token",
+      "details": {
+        "original_token": "fdcfa29ab52ca210f167",
+        "valid_within_ttl": true,
+        "rejected_after_expiry": true,
+        "expires_at": "2026-07-16T18:01:48.998314+00:00"
+      }
+    },
+    {
+      "attack": "oracle_extraction",
+      "blocked": true,
+      "mechanism": "privacy_minimized_counterexample_classes",
+      "details": {
+        "oracle_queries": 0,
+        "full_model_leaked": false
+      }
+    }
+  ],
+  "summary": {
+    "tests_passed": 6,
+    "tests_total": 6,
+    "defenses_blocked": 6,
+    "defenses_total": 6
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "framework": "REALITY_ACCORD",
+  "generated_at": "2026-07-16T17:56:25.425802+00:00",
+  "results": [
+    {
+      "name": "empty_input",
+      "pass": true
+    },
+    {
+      "name": "single_agent",
+      "pass": true
+    },
+    {
+      "name": "typical_safe",
+      "pass": true
+    },
+    {
+      "name": "large_scale_12_agents",
+      "pass": true
+    },
+    {
+      "name": "error_handling",
+      "pass": true
+    },
+    {
+      "name": "all_agents_agree",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

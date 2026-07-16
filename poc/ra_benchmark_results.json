@@ -1,0 +1,193 @@
+{
+  "framework": "REALITY_ACCORD",
+  "harness": "ra_benchmark",
+  "author": "Agim Haxhijaha",
+  "orcid": "0009-0002-3234-7765",
+  "disclaimer": "PoC benchmark only — not production, not peer reviewed",
+  "timestamp_utc": "2026-07-16T17:56:25.357331+00:00",
+  "python_version": "3.14.4",
+  "scenarios": [
+    {
+      "name": "poc_concordance_pass",
+      "size": "small",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 3.26,
+      "memory_bytes_peak": 3465,
+      "memory_kb_peak": 3.38,
+      "details": {
+        "verdict": "ACCEPT"
+      }
+    },
+    {
+      "name": "poc_conflict_quarantine",
+      "size": "small",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.197,
+      "memory_bytes_peak": 4405,
+      "memory_kb_peak": 4.3,
+      "details": {
+        "verdict": "QUARANTINE",
+        "quarantined": [
+          "vehicle-radar-F",
+          "pedestrian-sensor-E"
+        ]
+      }
+    },
+    {
+      "name": "model_spoofing_blocked",
+      "size": "small",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.103,
+      "memory_bytes_peak": 3898,
+      "memory_kb_peak": 3.81,
+      "details": {
+        "mechanism": "model_digest_attestation"
+      }
+    },
+    {
+      "name": "near_miss_quarantine",
+      "size": "medium",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.202,
+      "memory_bytes_peak": 8623,
+      "memory_kb_peak": 8.42,
+      "details": {
+        "verdict": "QUARANTINE"
+      }
+    },
+    {
+      "name": "privacy_no_reconstruction",
+      "size": "medium",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.242,
+      "memory_bytes_peak": 8667,
+      "memory_kb_peak": 8.46,
+      "details": {
+        "entropy_bits": 1.58
+      }
+    },
+    {
+      "name": "cascading_second_order_tube",
+      "size": "medium",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.097,
+      "memory_bytes_peak": 5035,
+      "memory_kb_peak": 4.92,
+      "details": {
+        "secondary_margin": 0.6
+      }
+    },
+    {
+      "name": "scale_5_agents_3d",
+      "size": "large",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.126,
+      "memory_bytes_peak": 4867,
+      "memory_kb_peak": 4.75,
+      "details": {
+        "agents": 5,
+        "verdict": "ACCEPT"
+      }
+    },
+    {
+      "name": "hor_stress_refuse_below_min",
+      "size": "large",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.092,
+      "memory_bytes_peak": 3112,
+      "memory_kb_peak": 3.04,
+      "details": {
+        "refused_at_pct": 0.0
+      }
+    },
+    {
+      "name": "temporal_validity_ttl",
+      "size": "large",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.16,
+      "memory_bytes_peak": 6287,
+      "memory_kb_peak": 6.14,
+      "details": {
+        "ttl_seconds": 300
+      }
+    },
+    {
+      "name": "multi_observer_12_agents",
+      "size": "large",
+      "expected_pass": true,
+      "actual_pass": true,
+      "correct": true,
+      "execution_time_ms": 0.15,
+      "memory_bytes_peak": 8627,
+      "memory_kb_peak": 8.42,
+      "details": {
+        "observers": 12,
+        "verdict": "ACCEPT"
+      }
+    }
+  ],
+  "metrics": {
+    "correctness_rate": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "correct": 10,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "total": 10
+  },
+  "by_size": {
+    "small": {
+      "count": 3,
+      "mean_time_ms": 1.187,
+      "mean_memory_kb": 3.83
+    },
+    "medium": {
+      "count": 3,
+      "mean_time_ms": 0.18,
+      "mean_memory_kb": 7.27
+    },
+    "large": {
+      "count": 4,
+      "mean_time_ms": 0.132,
+      "mean_memory_kb": 5.59
+    }
+  },
+  "scalability_projection": {
+    "baseline_ms": 0.132,
+    "baseline_reference": "mean of large scenarios",
+    "assumption": "linear O(n) extrapolation over observer agent count",
+    "projections": {
+      "10x": 1.32,
+      "100x": 13.2,
+      "1000x": 132.0
+    },
+    "projected_agents": {
+      "10x": 50,
+      "100x": 500,
+      "1000x": 5000
+    }
+  },
+  "memory_profile": {
+    "largest_scenario": "privacy_no_reconstruction",
+    "peak_memory_bytes": 8667,
+    "peak_memory_kb": 8.46
+  }
+}
