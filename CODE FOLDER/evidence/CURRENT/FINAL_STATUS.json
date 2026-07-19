@@ -1,0 +1,11 @@
+{
+  "schema_id": "FINAL_STATUS/v1",
+  "project": "reality-accord-concordance",
+  "finite_status": "SOFTWARE_PARTIAL_SPEC1_CODE_FOLDER_STARTED",
+  "github": "https://github.com/AGIM8003/reality-accord-concordance",
+  "visibility": "PUBLIC",
+  "publication": "ALREADY_PUBLISHED_ZENODO_SCHOLAR",
+  "canonical_code": "CODE FOLDER/src/reality_accord",
+  "blueprint": "REALITY_ACCORD_v1.8.0_PUBLIC_RESEARCH_EDITION.md",
+  "novelty_claimed": false
+}
